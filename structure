@@ -1,0 +1,3 @@
+  Main ->  [ImageIO,
+  			Process, -> [IP_funcs, CannyEdge]
+  			UI]
