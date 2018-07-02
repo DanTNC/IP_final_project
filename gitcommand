@@ -1,0 +1,9 @@
+start:
+	git pull
+
+update:
+	git add -A .
+	git commit -m "[<a>] <msg>"
+	( <a>: Feature/Fix/Chore/Refactor )
+	git push
+
