@@ -20,16 +20,17 @@ def smoothing(arr):
 # @false_val: the value to be assigned when it's smaller than threshold (don't change if set to None)
 # @Return: the processed image
 def thresholding(arr, thres = 45, true_val = None, false_val = None):
+	new_res = np.array(arr)
 	h, w = arr.shape
 	for i in xrange(h):
 		for j in xrange(w):
 			if arr[i, j] > thres:
 				if true_val is not None:
-					arr[i, j] = true_val
+					new_res[i, j] = true_val
 			else:
 				if false_val is not None:
-					arr[i, j] = false_val
-	return arr
+					new_res[i, j] = false_val
+	return new_res
 
 # Conduct gradient on the image
 # @arr: the image (array-like)

@@ -1,4 +1,4 @@
 from IP_funcs import *
-import CannyEdge as CE
 
-cannyedge = CE.CannyEdge.run
+def run(arr, x1, x2, y1, y2):
+	return res

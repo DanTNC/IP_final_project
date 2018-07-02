@@ -1,0 +1,23 @@
+IP_funcs.py:
+
+	def crop(arr, x1, x2, y1, y2):
+		return res
+
+UI.py:
+
+	main_menu: 3 buttons, 1 image, 4 label with 2 buttons for each
+		- import image
+		- process
+		- save image
+		- x1: <x1> with 2 buttons
+		- x2: <x2> with 2 buttons
+		- y1: <y1> with 2 buttons
+		- y2: <y2> with 2 buttons
+
+	
+	
+	main_menu()
+
+Main.py:
+
+	flow
