@@ -1,13 +1,15 @@
 import Process as P
 import UI
 import ImageIO as IIO
+import os
 
 class Main(object):
-	def __init__():
-		self.ui = UI.UI(self)
+	def __init__(self):
 		self.iio = IIO.ImageIO("test.png", "test_o.png")
 		self.image = None
 		self.result = None
+		self.cwd = os.getcwd()
+		self.ui = UI.UI(self)
 
 	def run(self):
 		self.ui.main_menu()
@@ -22,7 +24,7 @@ class Main(object):
 		return self.result
 
 	def save_image(self, name):
-		self.iio.save_output_image(name)
+		self.iio.save_output_image(name, self.overlap())
 
 	def overlap(self):
 		# overlap image and result
