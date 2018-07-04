@@ -103,5 +103,9 @@ class UI(object):
 			self.lines[varname] = self.canvas.create_line(0, var, 512, var, fill="yellow")
 
 	def borders(self):
-		pass
-		# arrange textvars to 4 integers
+		x1, x2, y1, y2 = int(self.x1.get()), int(self.x2.get()), int(self.y1.get()), int(self.y2.get())
+		if x1 > x2:
+			x1, x2 = x2, x1
+		if y1 > y2:
+			y1, y2 = y2, y1
+		return [x1, x2, y1, y2]
