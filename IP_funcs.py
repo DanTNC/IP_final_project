@@ -43,11 +43,11 @@ def gradient(arr):
 # @Return: the processed image
 def dilation(arr):
 	h, w = arr.shape
-	new_res = np.full_like(arr, 255)
+	new_res = np.full_like(arr, 0)
 	for i in xrange(h):
 		for j in xrange(w):
-			if (arr[max(0, i - 1): min(i + 2, h), max(0, j - 1): min(j + 2, w)] == 0).any():
-				new_res[i, j] = 0
+			if (arr[max(0, i - 1): min(i + 2, h), max(0, j - 1): min(j + 2, w)] == 255).any():
+				new_res[i, j] = 255
 	return new_res
 
 # Conduct erosion on the image
@@ -55,11 +55,11 @@ def dilation(arr):
 # @Return: the processed image
 def erosion(arr):
 	h, w = arr.shape
-	new_res = np.full_like(arr, 255)
+	new_res = np.full_like(arr, 0)
 	for i in xrange(h):
 		for j in xrange(w):
-			if (arr[max(0, i - 1): min(i + 2, h), max(0, j - 1): min(j + 2, w)] == 0).all():
-				new_res[i, j] = 0
+			if (arr[max(0, i - 1): min(i + 2, h), max(0, j - 1): min(j + 2, w)] == 255).all():
+				new_res[i, j] = 255
 	return new_res
 
 # Conduct opening on the image
