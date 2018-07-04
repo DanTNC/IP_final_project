@@ -12,9 +12,10 @@ class UI(object):
 		self.place(self.window)
 		self.cwdregex = re.compile("^{}/".format(self.main.cwd))
 		self.lines = {}
+		self.imagename = "img/empty.png"
 
 	def place(self, window):
-		window.geometry("+{}+{}".format(int(self.x/2.5), int(self.y/2.5)))
+		window.geometry("+{}+{}".format(int(self.x/3), int(self.y/3)))
 
 	def main_menu(self):
 		self.window.title("heart image processer")
