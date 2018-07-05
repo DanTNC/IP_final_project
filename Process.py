@@ -16,8 +16,8 @@ def run(arr, x1, x2, y1, y2):
 		for j in range(W):
 			if i >= x1 and i <= x2 and j >= y1 and j <= y2:
 				ary[j,i] = arr[j,i]
-	ary = thresholding(ary, 54, false_val = 0)
-	ary = thresholding(ary, 148, 0)
+	ary = thresholding(ary, 60, false_val = 0)
+	ary = thresholding(ary, 152, 0)
 	ary = thresholding(ary, 0, 255)
 	ary = opening(ary)
 	ary = closing(ary)
@@ -50,7 +50,10 @@ def run(arr, x1, x2, y1, y2):
 		for j in range(W):
 			if group[j,i] == pos + 1:
 				ary[j,i] = 255
+	ary = dilation(dilation(ary))
+	ary = erosion(erosion(ary))
 	ary = gradient(ary) 
+	
 	return ary
 	
 if __name__=="__main__":
