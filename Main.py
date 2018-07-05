@@ -3,6 +3,7 @@ import UI
 import ImageIO as IIO
 import os
 import numpy as np
+from PIL import Image
 
 class Main(object):
 	def __init__(self):
@@ -22,8 +23,6 @@ class Main(object):
 
 	def process(self, borders):
 		self.result = P.run(self.image, *borders)
-		# self.result = np.zeros_like(self.image)
-		# self.result[20: 400, 20: 400] = 1
 		return self.result
 
 	def save_image(self, name):
@@ -33,7 +32,9 @@ class Main(object):
 		if self.image is not None and self.result is None:
 			return self.image
 		elif self.image is not None and self.result is not None:
-			return np.where(self.result, 255, self.image)
+			RGBimage = np.array(Image.fromarray(self.image).convert("RGB"))
+			RGBimage[self.result > 0] = np.array([255, 0, 0])
+			return RGBimage
 		else:
 			return np.zeros((512, 512), dtype=int)
 
